@@ -22,19 +22,19 @@ progress with your programming skills.
 from typing import Callable
 
 
-def hello() -> None:
-    """Prints Hello World"""
-    print("Hello World!")
+# def hello() -> None:
+#     """Prints Hello World"""
+#     print("Hello World!")
 
 
 # hello is just a regular object or class of type `function`
-print(hello)
-print(type(hello))
-print(id(hello))
+# print(hello)
+# print(type(hello))
+# print(id(hello))
 
 # We can assign function to variables
-greet: Callable[[], None] = hello  # just assigns the object `hello` to greet variable
-greet()  # we can invoke/call the function using `()` at the end
+# greet: Callable[[], None] = hello  # just assigns the object `hello` to greet variable
+# greet()  # we can invoke/call the function using `()` at the end
 
 # -------------------------------------------------------------------------
 
@@ -44,28 +44,28 @@ ways.
 """
 
 
-def zola(name: str) -> str:
-    return f"Zola, {name}!"
+# def zola(name: str) -> str:
+#     return f"Zola, {name}!"
 
 
-def good_morning(name: str) -> str:
-    return f"Good Morning, {name}!"
+# def good_morning(name: str) -> str:
+#     return f"Good Morning, {name}!"
 
 
-def goodbye(name: str) -> str:
-    return f"Goodbye, {name}!"
+# def goodbye(name: str) -> str:
+#     return f"Goodbye, {name}!"
 
 
 # Function accepting a function
-def universal_greeter(name: str, greeter: Callable[[str], str]) -> None:
-    """Can greet in multiple ways"""
-    msg = greeter(name)
-    print(msg)
+# def universal_greeter(name: str, greeter: Callable[[str], str]) -> None:
+#     """Can greet in multiple ways"""
+#     msg = greeter(name)
+#     print(msg)
 
 
-universal_greeter("Louis", zola)
-universal_greeter("Louis", good_morning)
-universal_greeter("Louis", goodbye)
+# universal_greeter("Louis", zola)
+# universal_greeter("Louis", good_morning)
+# universal_greeter("Louis", goodbye)
 
 # -------------------------------------------------------------------------
 
@@ -79,31 +79,31 @@ to understand this!
 
 
 # Function returning a function
-def add_by_5(num: int) -> Callable[[], int]:
-    """Add by 5"""
+# def add_by_5(num: int) -> Callable[[], int]:
+#     """Add by 5"""
 
-    def by_5() -> int:
-        return num + 5
+#     def by_5() -> int:
+#         return num + 5
 
-    return by_5
+#     return by_5
 
 
-sum = add_by_5(5)
-print(sum())
+# sum = add_by_5(5)
+# print(sum())
 
 
 # Function returning a function
-def unique_adder(num1: int) -> Callable[[int], int]:
-    """Adds two numbers and then subtracts by 1"""
+# def unique_adder(num1: int) -> Callable[[int], int]:
+#     """Adds two numbers and then subtracts by 1"""
 
-    def adder(num2: int) -> int:
-        return num1 + num2 - 1
+#     def adder(num2: int) -> int:
+#         return num1 + num2 - 1
 
-    return adder
+#     return adder
 
 
-addr = unique_adder(5)
-print(addr(5))
+# addr = unique_adder(5)
+# print(addr(5))
 
 # -------------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ multiply: Callable[[int, int], int] = lambda x, y: x * y
 
 
 def calc(num1: int, num2: int, operation: Callable[[int, int], int]) -> int:
-    """Performs the maths operation on the numbers"""
+#     """Performs the maths operation on the numbers"""
     return operation(num1, num2)
 
 
